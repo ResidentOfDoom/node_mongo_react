@@ -1,0 +1,26 @@
+{
+    "name": "mantzaflari",
+    "description": "",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ResidentOfDoom/node_mongo_react"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ResidentOfDoom/node_mongo_react/issues"
+    },
+    "homepage": "https://github.com/ResidentOfDoom/node_mongo_react",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "4.x",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.11.0",
+        "nodemon": "^2.0.20"
+    }
+}
