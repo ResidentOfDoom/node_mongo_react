@@ -1,1 +1,3 @@
-Before first docker compose up, run npm install
+Before first docker compose up, run npm install in app folder
+create a ./data folder
+Enjoy!
