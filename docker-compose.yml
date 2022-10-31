@@ -10,6 +10,16 @@ services:
     volumes:
       - ./app:/app
     restart: always
+  client:
+    image: "node:latest" 
+    working_dir: /client
+    command: "npm start"
+    container_name: client
+    ports:
+      - '80:3000'
+    volumes:
+      - ./client:/client
+    restart: always
   mongo:
     container_name: mongo
     image: mongo

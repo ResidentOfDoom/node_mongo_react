@@ -3,6 +3,7 @@ const express = require('express');
 const { MongoClient, ObjectId} = require('mongodb');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
+const users = require('./controllers/users.js');
 
 // xrisimopoioume tin express kai dilonoume poia paketa apo autin tha xrisimopoiisoume pio kato
 const app = express();
@@ -31,7 +32,7 @@ function authenticateToken(req, res, next) {
     return res.sendStatus(401) // error message
   };
 
-  //an to token tou client exei tin sosti ipografi tote pairnoume ta stoixeia tou user kai ta vazoume sto req.user alla giati?????????????????????
+  //an to token tou client exei tin sosti ipografi tote pairnoume ta stoixeia tou user kai ta vazoume sto req.user gia na kseroume ana pasa stigmi gia poion user einai to session
   jwt.verify(token, process.env.TOKEN_SIGNATURE, (err, user) => { 
     console.log(err);
 
@@ -63,9 +64,7 @@ app.post('/token', async (req, res) => {
   res.json(message);
 });
 
-
-
-/* Methods for User */
+// Methods for User
 
 // dimiourgia kainouriou user
 app.post('/user', async (req, res) => {
@@ -124,6 +123,7 @@ app.delete('/user/:userId', authenticateToken, async (req, res) => {
   const deleteResult = await collection.deleteOne(Result);
   res.json(await deleteResult.deletedCount);
 });
+
 
 /* Methods for Products */
 
